@@ -6,6 +6,8 @@ import service.com.glovoapp.paymentautomationua.annotation.dto.ResultCalculation
 import service.com.glovoapp.paymentautomationua.annotation.dto.ResultCalculationResponseDto;
 import service.com.glovoapp.paymentautomationua.annotation.service.ResultCalculationService;
 
+import javax.ws.rs.BeanParam;
+import javax.ws.rs.core.Response;
 import java.time.format.DateTimeParseException;
 
 // add logger
@@ -32,6 +34,7 @@ public class CalculationController {
             ResultCalculationResponseDto response = resultCalculationService.work(request);
             return Response.ok(response).build();
             // add Response status in exception
+            // didnt find where to add message for client
         } catch (DateTimeParseException exc) {
             log.error("Could not parse one of the dates: '{}' or '{}'. {}", request.getFromDate(), request.getUntilDate(), exc);
             return Response.status(Response.Status.BAD_REQUEST).build();
