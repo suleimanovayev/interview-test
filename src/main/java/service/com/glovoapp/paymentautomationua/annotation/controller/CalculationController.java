@@ -25,6 +25,7 @@ public class CalculationController {
     @Consumes(MediaType.APPLICATION_JSON)
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
     // Validate request
+    // Add @BeanParam
     public Response calculateResults(@Valid @BeanParam ResultCalculationRequest request) {
         // Put logic inside service layer. In my previous place of work, handled the exceptions in the controller.
         try {

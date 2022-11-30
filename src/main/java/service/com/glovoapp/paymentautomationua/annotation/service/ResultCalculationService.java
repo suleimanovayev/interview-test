@@ -1,11 +1,11 @@
 package service.com.glovoapp.paymentautomationua.annotation.service;
 
-import com.glovoapp.paymentautomationua.service.converter.ResultCalculationConverter;
-import com.glovoapp.paymentautomationua.service.dto.ResultCalculationRequest;
-import com.glovoapp.paymentautomationua.service.dto.ResultCalculationResponse;
-import com.glovoapp.paymentautomationua.service.dto.ResultCalculationServiceRequest;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.log4j.Log4j2;
+import service.com.glovoapp.paymentautomationua.annotation.converter.ResultCalculationConverter;
+import service.com.glovoapp.paymentautomationua.annotation.dto.ResultCalculationRequest;
+import service.com.glovoapp.paymentautomationua.annotation.dto.ResultCalculationResponse;
+import service.com.glovoapp.paymentautomationua.annotation.dto.ResultCalculationServiceRequest;
 
 import java.util.Objects;
 
