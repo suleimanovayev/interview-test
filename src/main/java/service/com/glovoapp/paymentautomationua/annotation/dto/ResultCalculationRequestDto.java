@@ -3,7 +3,7 @@ package service.com.glovoapp.paymentautomationua.annotation.dto;
 import lombok.Data;
 
 @Data
-public class ResultCalculationRequest {
+public class ResultCalculationRequestDto {
 
     @QueryParam("category")
     @NotNull(message = "category is mandatory")

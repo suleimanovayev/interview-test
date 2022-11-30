@@ -1,9 +1,9 @@
 package service.com.glovoapp.paymentautomationua.annotation.controller;
 
 import lombok.RequiredArgsConstructor;
-import service.com.glovoapp.paymentautomationua.annotation.ControllerAuthorized;
-import service.com.glovoapp.paymentautomationua.annotation.dto.ResultCalculationRequest;
-import service.com.glovoapp.paymentautomationua.annotation.dto.ResultCalculationResponse;
+import service.com.glovoapp.paymentautomationua.annotation.annotation.ControllerAuthorized;
+import service.com.glovoapp.paymentautomationua.annotation.dto.ResultCalculationRequestDto;
+import service.com.glovoapp.paymentautomationua.annotation.dto.ResultCalculationResponseDto;
 import service.com.glovoapp.paymentautomationua.annotation.service.ResultCalculationService;
 
 import java.time.format.DateTimeParseException;
@@ -26,10 +26,10 @@ public class CalculationController {
     @Produces(MediaType.APPLICATION_OCTET_STREAM)
     // Validate request
     // Add @BeanParam
-    public Response calculateResults(@Valid @BeanParam ResultCalculationRequest request) {
+    public Response calculateResults(@Valid @BeanParam ResultCalculationRequestDto request) {
         // Put logic inside service layer. In my previous place of work, handled the exceptions in the controller.
         try {
-            ResultCalculationResponse response = resultCalculationService.work(request);
+            ResultCalculationResponseDto response = resultCalculationService.work(request);
             return Response.ok(response).build();
         } catch (DateTimeParseException exc) {
             log.error("Could not parse one of the dates: '{}' or '{}'. {}", request.getFromDate(), request.getUntilDate(), exc);

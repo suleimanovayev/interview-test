@@ -1,4 +1,4 @@
-package service.com.glovoapp.paymentautomationua.annotation;
+package service.com.glovoapp.paymentautomationua.annotation.annotation;
 
 import java.lang.annotation.*;
 
