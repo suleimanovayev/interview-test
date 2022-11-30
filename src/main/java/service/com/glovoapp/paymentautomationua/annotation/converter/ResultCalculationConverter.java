@@ -27,7 +27,7 @@ public class ResultCalculationConverter implements IRequestDataConverter<ResultC
         try {
             serviceRequest.setPriority(Integer.parseInt(data.getTrigger()));
         } catch (NumberFormatException exc) {
-            log.error("Could not parse priority. {}", exc);
+            log.warn("Could not parse priority. {}", exc);
             serviceRequest.setTrigger(data.getTrigger().toLowerCase());
         }
     }
