@@ -31,6 +31,7 @@ public class CalculationController {
         try {
             ResultCalculationResponseDto response = resultCalculationService.work(request);
             return Response.ok(response).build();
+            // add Response status in exception
         } catch (DateTimeParseException exc) {
             log.error("Could not parse one of the dates: '{}' or '{}'. {}", request.getFromDate(), request.getUntilDate(), exc);
             return Response.status(Response.Status.BAD_REQUEST).build();
